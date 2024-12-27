@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { getOwnerFirstName } from '../../app/selectors'
-import { updateFirstName } from '../../app/actions'
+import { ownerSlice } from './ownerSlice'
 
 export const Owner = () => {
   const ownerFirstName = useSelector(getOwnerFirstName)
@@ -9,7 +9,7 @@ export const Owner = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault()
     const firstName = evt.currentTarget.firstName.value
-    dispatch(updateFirstName(firstName))
+    dispatch(ownerSlice.actions.updateFirstName(firstName))
   }
 
   return (

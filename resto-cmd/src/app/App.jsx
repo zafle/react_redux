@@ -6,6 +6,7 @@ import { Total } from '../features/total/Total'
 import { Voucher } from '../features/voucher/Voucher'
 import { Owner } from '../features/owner/Owner'
 import { Menu } from '../features/menu/Menu'
+import { Notes } from '../features/notes/Notes'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Cart />
         <Total />
         <Voucher />
+        <Notes />
         <Owner />
       </div>
     </Provider>

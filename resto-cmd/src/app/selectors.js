@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
+// import { notesSelector } from '../features/notes/notesSlice'
 
 export const getProductList = (state) => state?.list
 
@@ -25,3 +26,5 @@ export const getSortedList = createSelector([getProductList], (list) => {
   }, [])
   return sortedList
 })
+
+// export const getAllNotes = (state) => notesSelector.selectAll(state)
