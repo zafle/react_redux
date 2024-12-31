@@ -1,5 +1,4 @@
 import { createSelector } from '@reduxjs/toolkit'
-// import { notesSelector } from '../features/notes/notesSlice'
 
 export const getProductList = (state) => state?.list
 
@@ -27,4 +26,17 @@ export const getSortedList = createSelector([getProductList], (list) => {
   return sortedList
 })
 
-// export const getAllNotes = (state) => notesSelector.selectAll(state)
+export const getProductQuantityPerName = (name) =>
+  createSelector(
+    [getProductList],
+    (list) => list.filter((product) => product.title === name).length
+  )
+
+export const getQuantityProductPerName = (name) => (state) =>
+  getProductList(state).filter((product) => product.title === name).length
+
+// export const getListQuantityProductPerName = (state) =>
+//   Object.values(ProductList).map((product) => ({
+//     title: product.title,
+//     quantity: getQuantityProductPerName(product.title)(state),
+//   }))
