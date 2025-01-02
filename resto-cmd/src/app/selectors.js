@@ -35,6 +35,9 @@ export const getProductQuantityPerName = (name) =>
 export const getQuantityProductPerName = (name) => (state) =>
   getProductList(state).filter((product) => product.title === name).length
 
+export const getUnavailableProducts = (state) =>
+  state?.menu?.unavailableProducts
+
 // export const getListQuantityProductPerName = (state) =>
 //   Object.values(ProductList).map((product) => ({
 //     title: product.title,
